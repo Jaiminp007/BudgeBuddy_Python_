@@ -3,7 +3,7 @@ from tkinter import PhotoImage
 import subprocess
 import json
 
-def login_action():
+def signup_action():
     with open("counter.txt", "w") as file:
         file.write("0")
 
@@ -108,7 +108,7 @@ entry_password_again.pack(pady=(0, 5))
 btn_toggle_again = tk.Button(login_frame, text="See Password", command=toggle_password_again, bg='#E0F5EA', fg=text_color)
 btn_toggle_again.place(x=280,y=180)
 
-button_signup = tk.Button(login_frame, text="Signup", command=login_action, bg=input_color, fg=text_color)
+button_signup = tk.Button(login_frame, text="Signup", command=signup_action, bg=input_color, fg=text_color)
 button_signup.pack(pady=(30, 20))
 
 label_login = tk.Label(app, text="Have an Account, ", bg=background_color, fg=text_color)

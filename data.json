@@ -6,5 +6,26 @@
       "increments": [],
       "money": []
     }
+  },
+  "Patel": {
+    "name": "Jaimin",
+    "password": "123",
+    "graph": {
+      "increments": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "money": [
+        5000,
+        4100,
+        2100,
+        2050
+      ]
+    },
+    "expense1": "900",
+    "expense2": "2000",
+    "expense3": "50"
   }
 }
