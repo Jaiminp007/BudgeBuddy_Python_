@@ -62,6 +62,7 @@ def button():
     money=str(newmoney)
     data[username][newexpense] = expense
     data[username]["graph"]["increments"].append(x)
+    data[username]["Counter"] = x
     with open("data.json", "w") as f:
         json.dump(data, f, indent=2)
     del data["username"]

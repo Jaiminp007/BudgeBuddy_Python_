@@ -4,22 +4,23 @@ import subprocess
 import json
 
 def signup_action():
-    with open("counter.txt", "w") as file:
-        file.write("0")
-
     with open("data.json", "r") as f:
         data=json.load(f)
-
+    
     username = entry_username.get()
     password = entry_password.get()
     password_again = entry_password_again.get()
     name = entry_name.get()
+    x="0"
 
     if password!=password_again:
         print("Error write again")
-
-    if username not in data:
-        data[username] = {
+        app.withdraw()
+        subprocess.run(['python', 'Signup.py'])
+    
+    else:
+        if username not in data:
+            data[username] = {
             "name": name,
             "password": password,
             "graph": {
@@ -27,17 +28,22 @@ def signup_action():
                 "money": []
             }
         }
-    else:
-        print("Username already exists.")
-        return
-    
-    with open("data.json", "w") as f:
-        json.dump(data, f, indent=4)
+        else:
+            print("Username already exists.")
+            return
+        
+        with open("data.json", "w") as f:
+            json.dump(data, f, indent=4)
+        print(data[username])
+        f=open("counter.txt", "w")
+        f.write(x)
+        f.close()
 
-    print(data[username])
-    app.withdraw()
-    subprocess.run(['python', 'Landing_Page.py', name, username, password])
-    
+        f = open("counter.txt", "r")
+        f.read()
+        app.withdraw()
+        subprocess.run(['python', 'Landing_Page.py', name, username, password])
+
 def toggle_password():
     if entry_password.cget('show') == '':
         entry_password.config(show='*')

@@ -4,7 +4,6 @@ import subprocess
 import json
 expense="0"
 
-
 #   This function is activated when Login button is clicked on the form.
 def login_action():
     # This reads data from the JSON file and then can change value from it
