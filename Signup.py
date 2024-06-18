@@ -3,6 +3,12 @@ from tkinter import PhotoImage
 import subprocess
 import json
 
+counter_file = "counter.txt"
+
+def write_counter(value):
+    with open(counter_file, "w") as f:
+        f.write(str(value))
+
 def signup_action():
     with open("data.json", "r") as f:
         data=json.load(f)
@@ -32,15 +38,11 @@ def signup_action():
             print("Username already exists.")
             return
         
+        data[username]["Counter"] = x
         with open("data.json", "w") as f:
             json.dump(data, f, indent=4)
         print(data[username])
-        f=open("counter.txt", "w")
-        f.write(x)
-        f.close()
-
-        f = open("counter.txt", "r")
-        f.read()
+        write_counter(x)
         app.withdraw()
         subprocess.run(['python', 'Landing_Page.py', name, username, password])
 

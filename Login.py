@@ -4,6 +4,12 @@ import subprocess
 import json
 expense="0"
 
+counter_file = "counter.txt"
+
+def write_counter(value):
+    with open(counter_file, "w") as f:
+        f.write(str(value))
+    
 #   This function is activated when Login button is clicked on the form.
 def login_action():
     # This reads data from the JSON file and then can change value from it
@@ -23,6 +29,9 @@ def login_action():
             print(data[username])
             money_list=data[username]["graph"]["money"]
             money=str(money_list[-1])
+            x_str=data[username]["Counter"]
+            x=int(x_str)
+            write_counter(x)
             # It stops the app from running
             app.withdraw()
             # It runs main.py when the username, password nad name is correct and present in JSON file
