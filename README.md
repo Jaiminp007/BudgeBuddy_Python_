@@ -12,7 +12,7 @@ Features
 
 Requirements
 
-- Python 3.x
+- Python 3.12
 - The following Python libraries:
   - matplotlib
   - tkinter
