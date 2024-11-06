@@ -15,3 +15,8 @@ Requirements
 - The following Python libraries:
   - matplotlib
   - tkinter
+
+
+
+TO VIEW THIS APP:
+DOWNLOAD ALL THE PYTHON SCRIPTS IN A SINGLE FOLDER AND RUN THE FILE Login.py.
